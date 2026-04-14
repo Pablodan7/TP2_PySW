@@ -1,0 +1,133 @@
+/* Variables globales */
+:root {
+  --color-principal: #3498db;   /* Azul */
+  --color-secundario: #2ecc71;  /* Verde */
+  --color-acento: #f39c12;      /* Naranja */
+  --color-texto: #333;
+  --color-fondo: #f9f9f9;
+  --fuente-base: 'Arial', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-base);
+  background: linear-gradient(to bottom, #f9f9f9, #eaf6ff);
+  color: var(--color-texto);
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+header nav a:hover {
+  color: var(--color-acento);
+  transform: scale(1.1);
+}
+
+/* SECCIÓN DE AGENCIAS */
+.agencias {
+  padding: 40px;
+  text-align: center;
+}
+
+.agencias h2 {
+  color: var(--color-principal);
+  margin-bottom: 30px;
+}
+
+/* Tarjetas con efecto flip */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  height: 350px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card-front {
+  background: #fff;
+}
+
+.card-front img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-front h3 {
+  margin: 10px;
+  color: var(--color-secundario);
+}
+
+.card-back {
+  background: var(--color-principal);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.card-back p {
+  margin-bottom: 15px;
+}
+
+.rating span {
+  font-size: 1.5em;
+  color: var(--color-acento);
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 20px;
+  text-align: center;
+}

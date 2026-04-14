@@ -1,0 +1,175 @@
+/* Variables globales */
+:root {
+  --color-principal: #3498db;   /* Azul */
+  --color-secundario: #2ecc71;  /* Verde */
+  --color-acento: #f39c12;      /* Naranja */
+  --color-texto: #333;
+  --color-fondo: #f9f9f9;
+  --color-dark-bg: #1e1e1e;
+  --color-dark-text: #f1f1f1;
+  --fuente-base: 'Arial', sans-serif;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: var(--fuente-base);
+  background: linear-gradient(to bottom, #f9f9f9, #eaf6ff);
+  color: var(--color-texto);
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  padding: 40px;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+header nav a:hover {
+  color: var(--color-acento);
+  transform: scale(1.1);
+}
+
+/* BLOG ESTILO REVISTA */
+.blog h2 {
+  text-align: center;
+  color: var(--color-principal);
+  margin-bottom: 20px;
+}
+
+.grid-blog {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+/* Artículos */
+.post {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0; /* oculto por defecto para scroll reveal */
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.post.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.post h3 {
+  color: var(--color-secundario);
+}
+
+/* FILTROS CON TAGS */
+.tags {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+  background: var(--color-principal);
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.tags label {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.grid-blog .post {
+  display: none;
+}
+
+#cultural:checked ~ .grid-blog .cultural,
+#naturaleza:checked ~ .grid-blog .naturaleza,
+#playa:checked ~ .grid-blog .playa {
+  display: block;
+}
+
+/* COMENTARIOS */
+.comentarios {
+  padding: 30px;
+  background: #eee;
+  border-radius: 10px;
+}
+
+.comentarios h2 {
+  text-align: center;
+  color: var(--color-principal);
+}
+
+.comentario {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: var(--color-principal);
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+}
+
+.avatar::before {
+  content: "A"; /* se puede personalizar con JS */
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.texto {
+  background: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .grid-blog {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 20px;
+  text-align: center;}
