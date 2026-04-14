@@ -1,0 +1,186 @@
+/* Variables globales */
+:root {
+  --color-principal: #3498db;   /* Azul */
+  --color-secundario: #2ecc71;  /* Verde */
+  --color-acento: #f39c12;      /* Naranja */
+  --color-texto: #333;
+  --color-fondo: #f9f9f9;
+  --fuente-base: 'Arial', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-base);
+  background: linear-gradient(to bottom, #f9f9f9, #eaf6ff);
+  color: var(--color-texto);
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+header nav a:hover {
+  color: var(--color-acento);
+  transform: scale(1.1);
+}
+
+/* FILTROS */
+.filtros {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  background: var(--color-principal);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.filtros h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: var(--color-secundario);
+}
+
+/* Ocultar todos los items por defecto */
+.galeria .item {
+  display: none;
+}
+
+/* Mostrar según filtros */
+#cultural:checked ~ .galeria .cultural,
+#naturaleza:checked ~ .galeria .naturaleza,
+#playa:checked ~ .galeria .playa,
+#gastronomico:checked ~ .galeria .gastronomico,
+#religioso:checked ~ .galeria .religioso {
+  display: block;
+}
+
+/* GALERÍA MASONRY */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 15px;
+  padding: 20px;
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.item:hover {
+  transform: scale(1.03);
+}
+
+.item:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay en hover */
+.overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 10px;
+  transform: translateY(100%);
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.item:hover .overlay {
+  transform: translateY(0);
+}
+
+/* TABLA RESPONSIVA */
+.tabla-precios {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead {
+  background: var(--color-principal);
+  color: white;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* Resaltado en hover */
+tbody tr:hover {
+  background: var(--color-secundario);
+  color: white;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  tr {
+    margin-bottom: 15px;
+  }
+  td {
+    text-align: left;
+    padding-left: 50%;
+    position: relative;
+  }
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    font-weight: bold;
+    color: var(--color-principal);
+  }
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
