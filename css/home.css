@@ -1,0 +1,222 @@
+/* Variables globales */
+:root {
+  --color-principal: #3498db;   /* Azul */
+  --color-secundario: #2ecc71;  /* Verde */
+  --color-acento: #f39c12;      /* Naranja para detalles */
+  --color-texto: #333;
+  --color-fondo: #f9f9f9;
+  --color-dark-bg: #1e1e1e;
+  --color-dark-text: #f1f1f1;
+  --fuente-base: 'Arial', sans-serif;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: var(--fuente-base);
+  background: linear-gradient(to bottom, #f9f9f9, #eaf6ff);
+  color: var(--color-texto);
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+  padding: 40px;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, transform 0.3s;
+}
+
+header nav a:hover {
+  color: var(--color-acento);
+  transform: scale(1.1);
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.hero video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  animation: fadeIn 2s ease-in-out;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.5em;
+  color: var(--color-secundario);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* DESTINOS DESTACADOS */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  padding: 10px;
+  color: var(--color-principal);
+}
+
+.card p {
+  padding: 0 10px 10px;
+  color: var(--color-texto);
+}
+
+/* CONTADOR ANIMADO */
+.contador {
+  text-align: center;
+  margin: 40px 0;
+  background: var(--color-secundario);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contador h2 {
+  font-size: 2.5em;
+  animation: contadorAnim 2s infinite alternate;
+}
+
+@keyframes contadorAnim {
+  from { transform: scale(1); color: white; }
+  to { transform: scale(1.2); color: var(--color-acento); }
+}
+
+/* TESTIMONIOS */
+.testimonios h2 {
+  text-align: center;
+  color: var(--color-principal);
+}
+
+.carrusel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 20px;
+}
+
+.carrusel blockquote {
+  scroll-snap-align: center;
+  background: #fff;
+  border-left: 5px solid var(--color-principal);
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 250px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.carrusel blockquote:hover {
+  background: var(--color-secundario);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(90deg, var(--color-principal), var(--color-secundario));
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+footer .newsletter input, footer .newsletter button {
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+}
+
+footer .newsletter button {
+  background: var(--color-acento);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+footer .newsletter button:hover {
+  background: var(--color-secundario);
+}
+
+footer .redes a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer .redes a:hover {
+  color: var(--color-acento);
+}

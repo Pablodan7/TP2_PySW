@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turismo - Destinos</title>
+  <!-- Enlace al CSS -->
+  <link rel="stylesheet" href="css/destinos.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="agencias.html">Agencias</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- FILTROS POR CATEGORÍA -->
+  <section class="filtros">
+    <h2>Filtro</h2>
+    <label><input type="checkbox" id="cultural"> Cultural</label>
+    <label><input type="checkbox" id="naturaleza"> Naturaleza</label>
+    <label><input type="checkbox" id="playa"> Sol y Playa</label>
+    <label><input type="checkbox" id="gastronomico"> Gastronómico</label>
+    <label><input type="checkbox" id="religioso"> Religioso</label>
+  </section>
+
+  <!-- GALERÍA MASONRY con GRID -->
+  <section class="galeria">
+    <h2>Galería de destinos</h2>
+    <div class="grid">
+      <div class="item cultural">
+        <img src="img/destinos/cultural1.jpg" alt="Destino cultural">
+        <div class="overlay"><p>Museo histórico</p></div>
+      </div>
+      <div class="item naturaleza">
+        <img src="img/destinos/naturaleza1.jpg" alt="Destino naturaleza">
+        <div class="overlay"><p>Parque nacional</p></div>
+      </div>
+      <div class="item playa">
+        <img src="img/destinos/playa1.jpg" alt="Destino playa">
+        <div class="overlay"><p>Playa paradisíaca</p></div>
+      </div>
+      <div class="item gastronomico">
+        <img src="img/destinos/gastro1.jpg" alt="Destino gastronómico">
+        <div class="overlay"><p>Ruta del vino</p></div>
+      </div>
+      <div class="item religioso">
+        <img src="img/destinos/religioso1.jpg" alt="Destino religioso">
+        <div class="overlay"><p>Catedral antigua</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLA RESPONSIVA DE PRECIOS -->
+  <section class="tabla-precios">
+    <h2>Precios de destinos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Destino</th>
+          <th>Categoría</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Museo histórico</td>
+          <td>Cultural</td>
+          <td>$2000</td>
+        </tr>
+        <tr>
+          <td>Parque nacional</td>
+          <td>Naturaleza</td>
+          <td>$3500</td>
+        </tr>
+        <tr>
+          <td>Playa paradisíaca</td>
+          <td>Sol y Playa</td>
+          <td>$5000</td>
+        </tr>
+        <tr>
+          <td>Ruta del vino</td>
+          <td>Gastronómico</td>
+          <td>$4000</td>
+        </tr>
+        <tr>
+          <td>Catedral antigua</td>
+          <td>Religioso</td>
+          <td>$2500</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Turismo UNJu</p>
+  </footer>
+
+</body>
+</html>
